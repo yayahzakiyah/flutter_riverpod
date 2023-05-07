@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod_fundamental/provider.dart';
-import 'package:flutter_riverpod_fundamental/second_page.dart';
+import 'package:flutter_riverpod_fundamental/counter_page.dart';
 
 class MainPage extends ConsumerWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -14,15 +13,14 @@ class MainPage extends ConsumerWidget {
       ),
       body: Center(
         child: Column(children: [
-          Text(ref.watch(nameProvider)),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const SecondPage()));
+                        builder: (context) => const CounterPage()));
               },
-              child: const Text('Go to Second Page'))
+              child: const Text('Go to Counter Page'))
         ]),
       ),
     );
